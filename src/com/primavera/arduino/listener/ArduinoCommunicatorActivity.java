@@ -61,7 +61,7 @@ public class ArduinoCommunicatorActivity extends ListActivity {
         HashMap<String, UsbDevice> usbDeviceList = usbManager.getDeviceList();
         if (DEBUG) Log.d(TAG, "length: " + usbDeviceList.size());
         Iterator<UsbDevice> deviceIterator = usbDeviceList.values().iterator();
-        if (deviceIterator.hasNext()) {
+        while (deviceIterator.hasNext()) {
             UsbDevice tempUsbDevice = deviceIterator.next();
 
             // Print device information. If you think your device should be able
